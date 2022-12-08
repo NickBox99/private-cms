@@ -20,7 +20,6 @@
                         <td>{{ $i }}</td>
                     </tr>
                 @endfor 
-
             </tbody>
         </table>
     </div>
