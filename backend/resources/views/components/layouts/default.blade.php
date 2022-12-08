@@ -15,7 +15,7 @@
         <x-navbar/>
 
         <div class="flex-grow-1 p-2">
-            <div class="h-100 bg-dark rounded p-2">{{ $slot }}</div>
+            <div class="h-100 bg-dark rounded p-2 d-flex flex-column">{{ $slot }}</div>
         </div>
     </div>
     
