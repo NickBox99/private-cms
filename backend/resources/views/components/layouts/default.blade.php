@@ -7,10 +7,17 @@
     <title>Document</title>
 
     @vite(['resources/js/app.js'])
-
-    <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
-<body>
-    {{ $slot }}
+<body class="d-flex vh-100">
+    <x-sidebar/>
+
+    <div class="flex-grow-1 d-flex flex-column">
+        <x-navbar/>
+
+        <div class="flex-grow-1 p-2">
+            <div class="h-100 bg-dark rounded p-2">{{ $slot }}</div>
+        </div>
+    </div>
+    
 </body>
 </html>
