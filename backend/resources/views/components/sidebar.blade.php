@@ -6,13 +6,13 @@
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
-        <a href="#" class="nav-link active" aria-current="page">
+        <a href="{{ route('web-storage-orders.index') }}" class="nav-link active" aria-current="page">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
           Заказы
         </a>
       </li>
       <li>
-        <a href="{{ route('orders.index') }}" class="nav-link text-white">
+        <a href="{{ route('web-storage-tags.index') }}" class="nav-link text-white">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
           Теги
         </a>

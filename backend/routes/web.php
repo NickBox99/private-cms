@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\WebStorageOrdersController;
+use App\Http\Controllers\WebStorageTagsController;
 
-Route::get('/', function() {
-    return view('index');
-});
+Route::view('/', 'index')->name('test');
 
-Route::resource('web-storage/orders', WebStorageOrdersController::class);
+Route::prefix('web-storage')->name('web-storage-')->group(function () { 
+    Route::resource('orders', WebStorageOrdersController::class);
+    Route::resource('tags', WebStorageTagsController::class);
+ });
