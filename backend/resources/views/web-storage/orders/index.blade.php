@@ -1,5 +1,6 @@
 <x-layouts.default>
-    <div class="table-responsive" style="height: calc(100vh - 65px - 2rem)"> 
+    <x-buttons-grid/>
+    <div class="table-responsive"> 
         <table class="table">
             <thead>
                 <tr class="table-dark top-0 position-sticky">
@@ -8,7 +9,7 @@
                     <th scope="col">Краткая информация</th>
                     <th scope="col">Цена</th>
                     <th scope="col">Просмотры</th>
-                    <th scope="col">Теги</th>
+                    {{-- <th scope="col">Теги</th> --}}
                 </tr>
             </thead>
             <tbody>
@@ -21,7 +22,7 @@
                         <td>{{ $order['short_description'] }}</td>
                         <td>{{ number_format($order['price'], 0, '', ' ') }} руб</td>
                         <td>{{ number_format($order['views'], 0, '', ' ') }}</td>
-                        <td>
+                        {{-- <td>
                             <div class="d-flex">
                                 @foreach ($order['tags'] as $tag)
                                     <div class="rounded p-2 me-1 lh-1" 
@@ -31,7 +32,7 @@
                                     </div>
                                 @endforeach
                             </div>
-                        </td>
+                        </td> --}}
                     </tr>
                 @endforeach
             </tbody>

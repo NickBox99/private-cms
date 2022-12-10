@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\WebStorageOrder;
+use Illuminate\Support\Facades\Redirect;
 
 class WebStorageOrdersController extends Controller
 {
@@ -14,41 +15,7 @@ class WebStorageOrdersController extends Controller
      */
     public function index()
     {
-        $orders = [
-            [
-                'id' => 1,
-                'name' => 'Тест',
-                'short_description' => 'Краткое описание',
-                'description' => 'Большое описание',
-                'price' => 1000,
-                'views' => 10,
-                'tags' => [
-                    [
-                        'name' => 'Большой бос',
-                        'short_name' => 'БОС',
-                        'background' => 'blue',
-                        'color' => 'white'
-                    ]
-                ]
-            ]
-        ];
-
-        WebStorageOrder::create([
-            'name' => 'Тест',
-            'short_description' => 'Краткое описание',
-            'description' => 'Большое описание',
-            'price' => 1000,
-            'views' => 10,
-            'tags_id' => 1
-            // 'tags' => [
-            //     [
-            //         'name' => 'Большой бос',
-            //         'short_name' => 'БОС',
-            //         'background' => 'blue',
-            //         'color' => 'white'
-            //     ]
-            // ]
-        ]);
+        $orders = WebStorageOrder::All();
 
         return view('web-storage.orders.index', [
             'orders' => $orders
@@ -62,7 +29,7 @@ class WebStorageOrdersController extends Controller
      */
     public function create()
     {
-        //
+        return view('web-storage.orders.create');
     }
 
     /**
@@ -73,7 +40,16 @@ class WebStorageOrdersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // WebStorageOrder::create([
+        //     'name' => $request['name'],
+        //     'short_description' => $request['short_description'],
+        //     'description' => $request['description'],
+        //     'price' => $request['price'],
+        //     'tags_id' => 1,
+        //     'views' => 0,
+        // ]);
+
+        Redirect::route('orders.index');
     }
 
     /**
